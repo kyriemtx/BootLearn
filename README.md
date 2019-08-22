@@ -1,0 +1,6 @@
+# BootLearn
+
+对springboot的学习做一下简单的记录
+start:快速构建一个springboot项目
+aop:springboot整合aop，记录用户操作日志
+mybatis:整合mybatis、mysql完成数据的CRUD，利用mybatis的generator完成代码的生成

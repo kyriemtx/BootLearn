@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kyrie.aop.mapperr.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.kyrie.aop.entity.Student" >
+    <result column="ID" property="id" jdbcType="INTEGER" />
+    <result column="SNAME" property="sname" jdbcType="VARCHAR" />
+    <result column="SSEX" property="ssex" jdbcType="CHAR" />
+    <result column="DATASOURCE" property="datasource" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.kyrie.aop.entity.Student" >
+    insert into student (SNAME, SSEX, DATASOURCE)
+    values (#{sname,jdbcType=VARCHAR}, #{ssex,jdbcType=CHAR},
+      #{datasource,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kyrie.aop.entity.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null " >
+        ID,
+      </if>
+      <if test="sname != null" >
+        SNAME,
+      </if>
+      <if test="ssex != null" >
+        SSEX,
+      </if>
+      <if test="datasource != null" >
+        DATASOURCE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null " >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sname != null" >
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="ssex != null" >
+        #{ssex,jdbcType=CHAR},
+      </if>
+      <if test="datasource != null" >
+        #{datasource,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectStudentByName" resultMap="BaseResultMap">
+    select * from student where sname = #{sname,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteStudentByKey" >
+    delete from student where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <update id="updateStudent" parameterType="com.kyrie.aop.entity.Student">
+     update student set sname=#{sname,jdbcType=VARCHAR},ssex=#{ssex,jdbcType=VARCHAR},
+      datasource=#{datasource,jdbcType=VARCHAR} where sname=#{sname,jdbcType=VARCHAR}
+  </update>
+  <select id="studentlist" resultMap="BaseResultMap">
+    select  * from student
+  </select>
+</mapper>

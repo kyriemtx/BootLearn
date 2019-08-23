@@ -107,6 +107,7 @@ public class AopController {
      * 列表
      * @return
      */
+    @Log("查询列表")
     @GetMapping("/list")
     public List<Student> studentlist(){
         List<Student> list = studentService.studentlist();

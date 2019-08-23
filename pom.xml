@@ -8,6 +8,7 @@
         <module>config</module>
         <module>mybatis</module>
         <module>aop</module>
+        <module>bootshiro</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

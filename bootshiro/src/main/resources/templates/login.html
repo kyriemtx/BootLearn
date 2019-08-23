@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../css/login.css" >
+
+</head>
+<body>
+<div class="login-page">
+    <form action="/login" method="post">
+     <div class="login"  >
+        <input type="text" placeholder="用户名" name="username" required="required"/>
+        <input type="password" placeholder="密码" name="password" required="required"/>
+      <!--  <p><input type="checkbox" name="rememberMe" />记住我</p>-->
+        <button type="submit"  data-loading="正在验证登录，请稍后...">登&nbsp;&nbsp;录</button>
+     </div>
+    </form>
+</div>
+</body>
+<script src="../js/jquery-1.11.1.min.js"></script>
+</html>

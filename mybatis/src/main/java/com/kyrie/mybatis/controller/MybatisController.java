@@ -110,6 +110,10 @@ public class MybatisController {
         int size = list.size();
         return  list;
     }
+    @GetMapping("1111")
+    public String test(){
+        return "table";
+    }
 
 
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/locale/bootstrap-table-zh-CN.min.js"></script>
+<body>
+<form class="form">
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                <span class="input-group-addon">姓名：</span>
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <button type="button" class="btn btn-success" onclick="refresh()">重置</button>
+            <button type="button" class="btn btn-primary" onclick="search()">搜索</button>
+        </div>
+    </div>
+</form>
+<table id="roleTable" data-mobile-responsive="true" class="mb-bootstrap-table text-nowrap"></table>
+<script>
+</script>
+</body>
+</html>

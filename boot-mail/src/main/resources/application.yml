@@ -1,0 +1,17 @@
+server:
+  port: 8002
+
+
+spring:
+  mail:
+    host: smtp.163.com
+    username: 1704291685@qq.com
+    password: tbtppzkskqdsdghj
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+

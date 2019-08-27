@@ -26,7 +26,7 @@ public class UserDetailService implements UserDetailsService {
         user.setUserName(username);
         user.setPassword(this.passwordEncoder.encode("123456"));
         // 输出加密后的密码
-        System.out.println(user.getPassword());
+        System.err.println("加密后的密码是：" + user.getPassword());
         return new User(username, user.getPassword(), user.isEnabled(),
                 user.isAccountNonExpired(), user.isCredentialsNonExpired(),
                 user.isAccountNonLocked(), AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));

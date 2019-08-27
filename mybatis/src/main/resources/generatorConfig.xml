@@ -56,8 +56,9 @@
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类   个人觉得生成那么多的example类很繁琐，因此设置为false-->
 
-        <table schema="test" tableName="student"
-               domainObjectName="Student" enableCountByExample="false"
+
+        <table schema="test" tableName="sys_role"
+               domainObjectName="Role" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false">
         </table>

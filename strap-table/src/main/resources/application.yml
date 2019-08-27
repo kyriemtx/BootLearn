@@ -1,0 +1,38 @@
+server:
+  port: 8001
+  tomcat:
+    uri-encoding: utf-8
+  servlet:
+    context-path: /strap
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/straptable?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+
+  thymeleaf:
+    cache: false
+    classpath: /templates/*.html
+    encoding: UTF-8
+
+
+mybatis:
+  type-aliases-package: com.kyrie.straptable.entity
+  mapper-locations: classpath:mapper/*.xml
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+
+logging:
+  level:
+    com:
+      kyrie:
+        straptable:
+          mapper: debug

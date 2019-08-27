@@ -1,2 +1,10 @@
 server:
   port: 8888
+
+spring:
+  security:
+    basic:
+      enabled: true
+
+  thymeleaf:
+    cache: false

@@ -7,6 +7,7 @@
 		<module>bootstart</module>
         <module>config</module>
         <module>mybatis</module>
+		<module>bootupload</module>
         <module>aop</module>
         <module>bootshiro</module>
 		<module>bootsecurity</module>

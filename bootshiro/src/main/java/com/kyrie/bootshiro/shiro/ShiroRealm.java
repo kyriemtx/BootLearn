@@ -39,7 +39,6 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String userName = (String) token.getPrincipal();
         String password = new String((char[]) token.getCredentials());
-
         System.out.println("用户" + userName + "------开始认证-----");
         SysUser user = sysUserService.findByUserName(userName);
 

@@ -47,7 +47,6 @@ public class SysUserService {
         String newPassword = MD5Utils.encrypt(user.getUserName(),user.getPassword());
         user.setSalt(salt);
         user.setPassword(newPassword);
-
         return  sysUserMapper.insert(user);
 
     }

@@ -57,11 +57,13 @@
             是否生成 example类   个人觉得生成那么多的example类很繁琐，因此设置为false-->
 
 
-        <table schema="test" tableName="sys_role"
-               domainObjectName="Role" enableCountByExample="false"
+
+        <table schema="test" tableName="user"
+               domainObjectName="User" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false">
         </table>
+
 
     </context>
 </generatorConfiguration>

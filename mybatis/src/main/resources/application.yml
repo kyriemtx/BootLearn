@@ -3,7 +3,7 @@ server:
   tomcat:
     uri-encoding: utf-8
   servlet:
-    context-path: /mybatis
+    context-path: /
 
 spring:
   datasource:
@@ -49,3 +49,25 @@ logging:
       kyrie:
         mybatis:
           mapper: debug
+
+
+
+
+kaptcha:
+  height: 42
+  width: 280
+  content:
+    length: 4 # 字符个数
+    source: abcdefghjklmnopqrstuvwxyz23456789 #生成的验证码字符,不支持中文,自动会转大小写
+    space: 6
+  font:
+    color: 56,99,216
+    name: Arial #字体名称
+    size: 40 #字体大小
+  background-color:
+    to: white
+    from: 25,60,91  #这里可以配RGB,也可以配颜色的单词,white,blue,red
+  border:
+    enabled: true
+    color: black #同理也可以RGB
+    thickness: 

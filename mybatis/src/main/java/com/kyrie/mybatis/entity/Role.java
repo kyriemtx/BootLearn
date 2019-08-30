@@ -1,26 +1,39 @@
 package com.kyrie.mybatis.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Role {
-    private Long id;
+    private Integer id;
+
+    private String roleId;
 
     private String name;
 
     private String description;
 
-    private Boolean available;
+    private Integer status;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Long getId() {
+    private List<Permission> permissions;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId == null ? null : roleId.trim();
     }
 
     public String getName() {
@@ -39,12 +52,12 @@ public class Role {
         this.description = description == null ? null : description.trim();
     }
 
-    public Boolean getAvailable() {
-        return available;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setAvailable(Boolean available) {
-        this.available = available;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getCreateTime() {
@@ -61,5 +74,13 @@ public class Role {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public List<Permission> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
     }
 }

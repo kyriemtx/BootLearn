@@ -31,7 +31,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login");
         //设置登陆成功的路径
         shiroFilterFactoryBean.setSuccessUrl("/index");
-       //设置无权限路径
+        //设置无权限路径
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();

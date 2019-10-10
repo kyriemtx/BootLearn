@@ -14,6 +14,8 @@
 		<module>boot-mail</module>
         <module>strap-table</module>
         <module>layui-boot</module>
+        <module>URLDlow</module>
+        <module>CSV</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

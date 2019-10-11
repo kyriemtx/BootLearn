@@ -1,17 +1,18 @@
-package com.kyrie.csv;
+package com.kyrie.tomysql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @ClassName CSVApplication
+ * @ClassName WriteToMysqlApplication
  * @Description
  * @Author tengxiao.ma
- * @Date 2019/10/10 18:10
+ * @Date 2019/10/11 9:19
  **/
 @SpringBootApplication
-public class CSVApplication {
+public class WriteToMysqlApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CSVApplication.class);
+        SpringApplication.run(WriteToMysqlApplication.class);
+
     }
 }

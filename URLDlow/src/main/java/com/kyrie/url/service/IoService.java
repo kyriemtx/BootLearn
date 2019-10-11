@@ -43,7 +43,8 @@ public class IoService {
         String filePath = file.getAbsolutePath();
         byte [] bytes = new byte[1024*4];
         //把下载的文件写入上面创建的文件中
-        InputStream inputStream = url.openStream(); FileOutputStream outputStream = new FileOutputStream(file);
+        InputStream inputStream = url.openStream();
+        FileOutputStream outputStream = new FileOutputStream(file);
            int len = 0;
            while ((len = inputStream.read(bytes)) > 0){
                outputStream.write(bytes,0,len);
@@ -57,14 +58,23 @@ public class IoService {
         List<PayFileInfo> list = new ArrayList<>();
         if(StringUtils.isNotBlank(filePath)){
            log.info("解析文件开始，文件名：",filePath);
+            //创建一个CSVReaderBuilder对象  参数是CSV解析的源文件
             CSVReaderBuilder csvReaderBuilder = new CSVReaderBuilder(inputStreamReader);
+            //创建一个CSVParseBuilder对象
             CSVParserBuilder csvParserBuilder = new CSVParserBuilder();
+            //设置解析器的分割符
             csvParserBuilder.withSeparator('|');
+            //设置用于解析输入的解析器
             csvReaderBuilder.withCSVParser(csvParserBuilder.build());
+            //通过解析器创建一个CSVReader对象  用于读取文件
             CSVReader reader = csvReaderBuilder.build();
+            //允许对列和属性进行映射
             ColumnPositionMappingStrategy<PayFileInfo> mapping = new ColumnPositionMappingStrategy<>();
+            //设置被映射的类的类型
             mapping.setType(PayFileInfo.class);
+            //csv数据转换为实体类
             CsvToBean<PayFileInfo> csvToBean = new CsvToBean<PayFileInfo>();
+            //过滤器允许在创建bean之前忽略输入行
             CsvToBeanFilter csvToBeanFilter = new CSVToBeanFilter();
             csvToBean.setMappingStrategy(mapping);
             csvToBean.setCsvReader(reader);

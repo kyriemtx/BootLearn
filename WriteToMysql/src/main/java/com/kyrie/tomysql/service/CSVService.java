@@ -4,6 +4,7 @@ import java.io.*;
 
 import com.kyrie.tomysql.dao.UserMapper;
 import com.kyrie.tomysql.entity.User;
+import com.kyrie.tomysql.filter.CsvBeanFilter;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
@@ -51,9 +52,11 @@ public class CSVService {
             CSVReader reader = readerBuilder.build();
             ColumnPositionMappingStrategy<User> mapping = new ColumnPositionMappingStrategy<>();
             mapping.setType(User.class);
+            CsvBeanFilter csvBeanFilter = new CsvBeanFilter();
             CsvToBean<User> csvToBean = new CsvToBean<>();
             csvToBean.setCsvReader(reader);
             csvToBean.setMappingStrategy(mapping);
+            csvToBean.setFilter(csvBeanFilter);
             Iterator<User> cit = csvToBean.iterator();
             while (cit.hasNext()){
                 User user = cit.next();

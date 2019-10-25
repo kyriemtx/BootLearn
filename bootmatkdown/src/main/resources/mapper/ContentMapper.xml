@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kyrie.markdown.mapper.ContentMapper">
+
+    <select id="getText" resultType="com.kyrie.markdown.entity.Content">
+    select id,text from content
+  </select>
+
+    <insert id="addText">
+        insert into content(text) values(#{text})
+    </insert>
+</mapper>
